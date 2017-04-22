@@ -2,6 +2,7 @@
 
 > VT System buat PKM
 
+VT System BlackBoxing, intinya cuma baca data dari "blackbox" yang ada dikendaraan dan dikirimkan ke server/clound (pake firebase sih ini) lalu ditampilkanke halaman web.
 ## Build Setup
 
 ``` bash
