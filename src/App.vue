@@ -1,41 +1,28 @@
 <template>
   <div id="app">
-      <ui-toolbar brand="VT-Sys" raised  type="colored" text-color="white" removeNavIcon>
-         <div slot="actions">
-             <ui-icon-button
-                 color="white"
-                 icon="refresh"
-                 size="large"
-                 type="secondary"
-             ></ui-icon-button>
+    <v-toolbar fixed class="teal" dark>
+      <v-toolbar-title><span style="color: white">VTSys</span></v-toolbar-title>
+      <v-toolbar-items class="hidden-md-and-down">
+        <v-toolbar-item ripple>Link</v-toolbar-item>
+        <v-toolbar-item ripple>Link</v-toolbar-item>
+        <v-toolbar-item ripple>Link</v-toolbar-item>
+      </v-toolbar-items>
+    </v-toolbar>
 
-             <ui-icon-button
-                 color="white"
-                 icon="search"
-                 size="large"
-                 type="secondary"
-             ></ui-icon-button>
-         </div>
-     </ui-toolbar>
-     <ui-tabs
-        background-color="primary"
-        fullwidth
-        indicator-color="white"
-        text-color-active="white"
-        text-color="white"
-        type="text"
-    >
-        <ui-tab title="Kondisi Terbaru" icon="book">
-            <index></index>
-        </ui-tab>
+    <div style="padding-top: 56px; margin-bottom: 56px;">
+      <router-view></router-view>
+    </div>
 
-        <ui-tab title="Riwayat" icon="people">
-            <history></history>
-        </ui-tab>
-    </ui-tabs>
-
-
-
+    <v-bottom-nav absolute value="false" class="fixed--nav white">
+      <v-btn flat dark class="teal--text" @click.native="toHome()" :value="e1 === 1">
+        <span>Beranda</span>
+        <v-icon>home</v-icon>
+      </v-btn>
+      <v-btn flat dark class="teal--text" @click.native="toHistory()" :value="e1 === 2">
+        <span>Riwayat</span>
+        <v-icon>history</v-icon>
+      </v-btn>
+    </v-bottom-nav>
   </div>
 
 </template>
@@ -65,18 +52,34 @@ export default {
         {
           'title': 'Riwayat',
           'url': '/riwayat',
-
           'route': true
         }
-      ]
+      ],
+      e1 : 1
     }
   },
   firebase: {
     vtsys: db.ref('cars').limitToLast(5)
+  },
+  methods: {
+    toHome: function() {
+      console.log("This is home");
+      this.$router.push({ path: '/home' });
+      this.e1 = 1;
+    },
+    toHistory: function() {
+      this.e1 = 2;
+      console.log("This is history");
+      this.$router.push({ path: '/riwayat' });
+    }
   }
 }
 </script>
 
 <style>
-
+  .fixed--nav {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+  }
 </style>

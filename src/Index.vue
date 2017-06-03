@@ -9,17 +9,92 @@
         <gmap-marker :position="{lat:-7.7956, lng:110.3695}">
         </gmap-marker>
     </gmap-map>
+    <v-container>
+      <v-card>
+        <v-list two-line subheader>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>date_range</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Sunday, May 15 19:00 </v-list-tile-title>
+                <v-list-tile-sub-title>Waktu Terakhir Dikirim</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>gps_fixed</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Show your status</v-list-tile-title>
+                <v-list-tile-sub-title>Posisi</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>pause</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>98 KM/h</v-list-tile-title>
+                <v-list-tile-sub-title>Kecepatan</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>pause</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>10 Meter</v-list-tile-title>
+                <v-list-tile-sub-title>Posisi X</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
 
-        <h3>Keadaan Mobil Saat Ini</h3>
-        <h5>Posisi:</h5>
-        <p>
-            {{ latitude }}, {{ longitude }}
-            <br>
-            waktu : {{ waktu }} <br>
-            kecepatan : {{ kecepatan }} km/h <br>
-            tangki : {{ kecepatan }} Liter <br>
-            arus: {{ arus ? 'nyala' : 'tidak' }}
-        </p>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>pause</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>10 Meter</v-list-tile-title>
+                <v-list-tile-sub-title>Posisi Y</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>pause</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>10 Meter</v-list-tile-title>
+                <v-list-tile-sub-title>Posisi Z</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+          <v-list-item>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-icon x-large dark>flash_on</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>10 ampere</v-list-tile-title>
+                <v-list-tile-sub-title>Arus</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-item>
+        </v-list>
+      </v-card>
+    </v-container>
+
   </div>
 
 
@@ -37,7 +112,8 @@
                 waktu: 'Sunday, May 15 19:00',
                 kecepatan: 17 ,
                 tangki: 12 ,
-                arus: true
+                arus: true,
+
             }
         },
         firebase: {
